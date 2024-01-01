@@ -1,0 +1,120 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,800;1,100;1,200;1,300;1,400;1,700;1,800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+
+}
+body{
+    background-color: black;
+    color: white;
+}
+.left{
+    
+    width: 25vw;
+    padding: 5px;
+}
+.right{
+    
+    width: 75vw;
+}
+.home ul li{
+    width: 15px;
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    padding-top: 14px;
+    font-weight: bold;
+}
+
+.bg-black{
+    background-color: black;
+    color: white;
+}
+.invert{
+    filter: invert(1);
+}
+.bg-grey{
+    background-color: #121212;
+}
+.heading{
+    /* width: 15px; */
+    display: flex;
+    gap: 15px;
+    padding-top: 14px;
+    font-weight: bold;
+    align-items: center;
+    font-size: 12px;
+}
+.heading img{
+    width: 20px;
+}
+.library{
+    min-height: 73vh;
+    position: relative;
+}
+.footer{
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    font-size: 7px;
+    gap: 13px;
+    padding: 10px 0;
+}
+
+.footer a{
+    color: grey;
+}
+.right{
+    margin: 10px 0;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(34, 34, 34);
+}
+.header > *{
+    padding: 20px;
+}
+.spotifyPlaylists{
+    padding: 6px;
+}
+.cardContainer{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+.card{
+    width: 150px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #252525;
+    position: relative;
+}
+.card >*{
+    padding-top: 3px;
+}
+.card img{
+    width: 100%;
+    object-fit: contain;
+}
+.play{
+    height: 28px;
+    width: 28px;
+    background-color: #1fdf64;
+    border-radius: 50%;
+    /* border: 2px solid #000; */
+    padding: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 12px;
+    top: 119px;
+    opacity: 0;
+    /* transition: all 1s ease-out; */
+    
+}
