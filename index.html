@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="utility.css" />
-    <title>Document</title>
+    <title>Spotify – Web Player</title>
   </head>
   <body>
     <div class="container flex bg-black">
@@ -23,6 +23,11 @@
           <div class="heading">
             <img class="invert" src="playlist.svg" alt="" />
             <h2>Your library</h2>
+          </div>
+          <div class="songList">
+            <ul>
+              
+            </ul>
           </div>
           <div class="footer">
             <div>
@@ -100,8 +105,8 @@
             </div>
           </div>
           <div class="buttons">
-            <button>Signup</button>
-            <button>Login</button>
+            <button class="signupbtn">Sign up</button>
+            <button class="loginbtn">Log in</button>
           </div>
         </div>
         <div class="spotifyPlaylists">
@@ -140,6 +145,20 @@
               <h2>lofi beats</h2>
               <p>chill beats, lofi vibes, new tracks every week...</p>
             </div>
+          </div>
+          <div class="playbar">
+            <div class="seekbar">
+                <div class="circle">
+
+                </div>
+            </div>
+            <div class="songinfo"></div>
+            <div class="songbuttons">
+              <img id="prev" src="prev.svg" alt="" />
+              <img id="play" src="play.svg" alt="" />
+              <img id="next" src="next.svg" alt="" />
+            </div>
+            <div class="songtime"></div>
           </div>
         </div>
       </div>
