@@ -109,6 +109,7 @@ body{
     border-radius: 5px;
     background-color: #252525;
     position: relative;
+    transition: all .5s;
 }
 .card >*{
     padding-top: 3px;
@@ -116,6 +117,10 @@ body{
 .card img{
     width: 100%;
     object-fit: contain;
+}
+.card:hover{
+    background-color: #121212;
+    cursor: pointer;
 }
 .play{
     height: 28px;
@@ -133,6 +138,9 @@ body{
     opacity: 0;
     /* transition: all 1s ease-out; */
     
+}
+.play:hover{
+    opacity: 1;
 }
 .signupbtn{
     background-color: rgb(34, 34, 34);
@@ -246,7 +254,7 @@ body{
     justify-content: space-between;
     margin: 15px 0;
 }
-@media (max-width:1400px){
+@media (max-width:1200px){
     .left{
         position: absolute;
         left: -120%;
@@ -278,7 +286,7 @@ body{
         display: block;
     }
     .card{
-        width: 80vw;
+        width: 44vw;
     }
     .cardContainer{
         margin: 0;
@@ -295,5 +303,10 @@ body{
         gap: 25px;
         font-size: 20px;
         align-items: center;
+    }
+}
+@media (max-width:400px){
+    .card{
+        width: 80vw;
     }
 }
