@@ -164,6 +164,21 @@ async function main() {
     if(index+1<songs.length)
     playMusic(songs[index+1])
   })
+  document.querySelector(".range").getElementsByTagName("input")[0].addEventListener("change",(e)=>{
+    currentSong.volume=parseInt(e.target.value)/100;
+  })
+  document.querySelector(".volume>img").addEventListener("click",e=>{
+    if(e.target.src.includes("volume.svg")){
+      e.target.src=e.target.src.replace("volume.svg","mute.svg")
+      currentSong.volume=0;
+      document.querySelector(".range").getElementsByTagName("input")[0].value=0;
+    }
+    else{
+      e.target.src=e.target.src.replace("mute.svg","volume.svg")
+      currentSong.volume=.1;
+      document.querySelector(".range").getElementsByTagName("input")[0].value=15
+    }
+  })
   
 }
 main();

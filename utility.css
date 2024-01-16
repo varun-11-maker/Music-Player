@@ -26,16 +26,16 @@
   
   /* Track */
   ::-webkit-scrollbar-track {
-    background: #333; /* Dark background color */
+    background: #242424; /* Dark background color */
   }
   
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: #666; /* Darker color for the scrollbar handle */
+    background: #2d2d2d; /* Darker color for the scrollbar handle */
   }
   
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: #888; /* Lighter color when hovering over the scrollbar handle */
+    background: #1d1d1d; /* Lighter color when hovering over the scrollbar handle */
   }
   

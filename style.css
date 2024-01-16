@@ -210,6 +210,11 @@ body{
     font-size: 14px;
     width: 230px;
 }
+.timevol{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
 .hamburger{
     display: none;
 }
@@ -225,7 +230,7 @@ body{
 }
 .seekbar{
     height: 4px;
-    width: 97.5%;
+    width: 98.5%;
     background:black;
     position: absolute;
     bottom: 0;
@@ -244,16 +249,40 @@ body{
 .songbuttons img{
     cursor: pointer;
 }
-.songinfo, .songtime{
+.songinfo{
     color: black;
     padding: 0 6px;
     width: 200px;
+}
+.songtime{
+    width: 130px;
+    color: black;
+    padding: 0 6px;
+}
+.volume{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+}
+.range input{
+    cursor: pointer;
 }
 .abovebar{
     display: flex;
     justify-content: space-between;
     margin: 15px 0;
 }
+@media (max-width:1600px){
+    .playbar{
+        width: 65vw;
+    }
+    .seekbar{
+        width: 64.5vw;
+    }
+}
+
 @media (max-width:1200px){
     .left{
         position: absolute;
@@ -284,6 +313,13 @@ body{
     }
     .hamburger{
         display: block;
+    }
+    .timevol{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
     }
     .card{
         width: 44vw;
