@@ -1,6 +1,7 @@
 let currentSong=new Audio();
 let songs;
 let currFolder;
+let song;
 function secondsToMinutesSeconds(seconds) {
   if (isNaN(seconds) || seconds < 0) {
       return "00:00";
@@ -28,6 +29,7 @@ async function getSongs(folder) {
     if (element.href.endsWith(".mp3"))
       songs.push(element.href.split(`/${folder}/`)[1]);
   }
+  song=songs
   let songUL = document
   .querySelector(".songList")
   .getElementsByTagName("ul")[0];
@@ -154,15 +156,15 @@ async function main() {
   })
   prev.addEventListener("click",()=>{
     currentSong.pause()
-    let index=songs.indexOf(currentSong.src.split("/").slice(-1)[0])
-    if(index-1>=0)
-    playMusic(songs[index-1])
+    let index=song.indexOf(currentSong.src.split("/").slice(-1)[0])
+    if((index-1)>=0)
+    playMusic(song[index-1])
   })
   next.addEventListener("click",()=>{
     currentSong.pause()
-    let index=songs.indexOf(currentSong.src.split("/").slice(-1)[0])
-    if(index+1<songs.length)
-    playMusic(songs[index+1])
+    let index=song.indexOf(currentSong.src.split("/").slice(-1)[0])
+    if((index+1)<song.length)
+    playMusic(song[index+1])
   })
   document.querySelector(".range").getElementsByTagName("input")[0].addEventListener("change",(e)=>{
     currentSong.volume=parseInt(e.target.value)/100;
@@ -179,6 +181,7 @@ async function main() {
       document.querySelector(".range").getElementsByTagName("input")[0].value=15
     }
   })
+  
   
 }
 main();

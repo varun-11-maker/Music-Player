@@ -62,8 +62,8 @@ body{
     position: absolute;
     bottom: 0;
     display: flex;
-    font-size: 7px;
-    gap: 13px;
+    font-size: 8px;
+    gap: 18px;
     padding: 10px 0;
 }
 
@@ -153,7 +153,7 @@ body{
     cursor: pointer;
 }
 .signupbtn:hover{
-    font-size: 20px;
+    font-size: 15px;
     color: white;
 }
 .loginbtn{
@@ -168,7 +168,7 @@ body{
 }
 .loginbtn:hover{
     font-weight: bold;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 .playbar{
