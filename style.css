@@ -149,7 +149,7 @@ body{
     outline: none;
     border: none;
     margin: 0 25px;
-    font-size: 14px;
+    font-size: 13px;
     cursor: pointer;
 }
 .signupbtn:hover{
@@ -162,7 +162,7 @@ body{
     color: black;
     font-weight: bold;
     padding: 8px;
-    font-size: 14px;
+    font-size: 13px;
     cursor: pointer;
     width: 80px;
 }
@@ -217,6 +217,7 @@ body{
 }
 .hamburger{
     display: none;
+    cursor: pointer;
 }
 .playNow{
     display: flex;
@@ -322,7 +323,7 @@ body{
         gap: 10px;
     }
     .card{
-        width: 44vw;
+        width: 55vw;
     }
     .cardContainer{
         margin: 0;
@@ -341,7 +342,7 @@ body{
         align-items: center;
     }
 }
-@media (max-width:400px){
+@media (max-width:500px){
     .card{
         width: 80vw;
     }
