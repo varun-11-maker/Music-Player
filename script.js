@@ -17,7 +17,7 @@ function secondsToMinutesSeconds(seconds) {
 }
 async function getSongs(folder) {
   currFolder=folder
-  let a = await fetch(`http://127.0.0.1:5500/${folder}/`);
+  let a = await fetch(`/${folder}/`);
   let response = await a.text();
   // console.log(response);
   let div = document.createElement("div");
@@ -55,6 +55,7 @@ Array.from(
     playMusic(e.querySelector(".info").firstElementChild.innerHTML.trim());
   });
 });
+return songs;
 }
 const playMusic = (track,pause=false) => {
     // let audio=new Audio("/songs/"+track)
@@ -70,22 +71,30 @@ const playMusic = (track,pause=false) => {
     
 };
 async function displayAlbums(){
-  let a = await fetch(`http://127.0.0.1:5500/songs/`);
+  let a = await fetch(`/songs/`);
   let response = await a.text();
   let div = document.createElement("div");
   div.innerHTML = response;
-  let ulElement = div.querySelector("ul")
-  let anchors=ulElement.querySelectorAll("a")
+  console.log(div)
+  //let ulElement = div.getElementById("wrapper")
+  let anchors=div.getElementsByTagName("a")
+  let elementToRemove1=anchors[0]
+  let elementToRemove2=anchors[1]
+  elementToRemove1.remove()
+  elementToRemove2.remove()
+  console.log(anchors)
   let cardContainer=document.querySelector(".cardContainer")
   let array=Array.from(anchors)
   for(let index=0;index<array.length;index++){
     const e=array[index];
-    if(e.href.includes("/songs")){
-      // console.log(e.href)
-      let folder=(e.href.split("/").slice(-2)[1])
-      let a = await fetch(`http://127.0.0.1:5500/songs/${folder}/info.json`);
+    console.log(e)
+    if(e.href.includes("/songs") && !e.href.includes(".htaccess")){
+      console.log(e.href)
+      let folder=e.href.split("/").slice(-2)[0]
+      console.log(folder)
+      let a = await fetch(`/songs/${folder}/info.json`);
       let response = await a.json();
-      // console.log(response)
+      // console.log(response)   
       cardContainer.innerHTML+=`<div data-folder="${folder}" class="card">
       <div class="play">
         <svg
@@ -116,7 +125,7 @@ async function displayAlbums(){
   Array.from(document.getElementsByClassName("card")).forEach(e=>{
     e.addEventListener("click",async item=>{
       songs=await getSongs(`songs/${item.currentTarget.dataset.folder}`)
-      
+      playMusic(songs[0])
     })
   })
   // console.log(anchors)
@@ -125,7 +134,7 @@ async function displayAlbums(){
 async function main() {
   await getSongs("songs/ncs");
   playMusic(songs[0],true)
-  displayAlbums()
+  await displayAlbums()
   // console.log(songs);
 
   play.addEventListener("click",()=>{
@@ -167,6 +176,9 @@ async function main() {
   })
   document.querySelector(".range").getElementsByTagName("input")[0].addEventListener("change",(e)=>{
     currentSong.volume=parseInt(e.target.value)/100;
+    if(currentSong.volume>0){
+      document.querySelector(".volume>img").src=document.querySelector(".volume>img").src.replace("mute.svg","volume.svg")
+    }
   })
   document.querySelector(".volume>img").addEventListener("click",e=>{
     if(e.target.src.includes("img/volume.svg")){

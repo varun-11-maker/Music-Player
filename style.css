@@ -287,12 +287,14 @@ body{
 @media (max-width:1200px){
     .left{
         position: absolute;
-        left: -120%;
+        left: -130%;
         transition: all .3s;
         z-index: 1;
         width: 370px;
         background-color: black;
         padding: 0;
+        position: fixed;
+        top: 0;
     }
     .songinfo,.songtime{
         width: auto;
@@ -328,6 +330,7 @@ body{
     .cardContainer{
         margin: 0;
         justify-content: center;
+        margin-bottom: 35vh;
     }
     .close{
         display: block;
@@ -344,6 +347,21 @@ body{
 }
 @media (max-width:500px){
     .card{
-        width: 80vw;
+        width: 100%;
+    }
+    .cardContainer{
+        max-height: unset;
+        overflow-y: unset;
+    }
+    .spotifyPlaylists h1{
+        padding: 4px;
+    }
+    .header{
+        padding: 7px;
+    }
+    .left{
+        position: fixed;
+        top: 0;
+        width: 100vw;
     }
 }
