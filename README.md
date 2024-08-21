@@ -7,4 +7,8 @@ The Music Player is a application that replicates the core features of a modern 
 <li>Responsive Design: Optimized for both desktop and mobile devices.</li>
 
 <h2>Tech-Stack</h2>
-HTML5 CSS3 JavaScript
+<li>HTML</li>
+
+<li>CSS</li>
+
+<li>JAVASCRIPT</li>
