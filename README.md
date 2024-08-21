@@ -12,3 +12,6 @@ The Music Player is a application that replicates the core features of a modern 
 <li>CSS</li>
 
 <li>JAVASCRIPT</li>
+
+<h2>Live Demo</h2>
+<a href="https://playspotify.freewebhostmost.com/">Music Player</a>
