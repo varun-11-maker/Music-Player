@@ -5,3 +5,6 @@ The Music Player is a application that replicates the core features of a modern 
 <li>Playlists: The application comes with different playlists containing multiple songs in each of them.</li>
 <li>Audio Playback: Seamless playback of audio files with controls for play, pause, skip, and volume.</li>
 <li>Responsive Design: Optimized for both desktop and mobile devices.</li>
+
+<h2>Tech-Stack</h2>
+HTML5 CSS3 JavaScript
